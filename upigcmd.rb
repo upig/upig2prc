@@ -59,16 +59,23 @@ options[:temp] = File.basename(keyword, '.txt')+'.html' if options[:temp] == ''
 
 $stderr.puts optparse if keyword.strip==''
 
+HTML_ESCAPE = { '&' => '&amp;',  '>' => '&gt;',   '<' => '&lt;', '"' => '&quot;',  ' '=>'&nbsp;' }
 
-html_header =<<'EOF'
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link REL="stylesheet" TYPE="text/css" HREF="xiang.css"></head><body topmargin="0" leftmargin="0" bottommargin="0" rightmargin="0">
+def h(s)
+  s.to_s.gsub(/[&">< ]/) { |special| HTML_ESCAPE[special] }
+end
+
+
+script_path = File.expand_path(File.dirname(__FILE__))
+html_header =<<"EOF"
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link REL="stylesheet" TYPE="text/css" HREF="file://#{script_path}/xiang.css"></head><body topmargin="0" leftmargin="0" bottommargin="0" rightmargin="0">
 EOF
 html_footer =<<'EOF'
 </body></html>
 EOF
-
 html_header = html_header.to_utf8
 html_footer = html_footer.to_utf8
+
 keyword.strip!
 File.open(options[:temp], 'w'){|temp_file|
   File.open(keyword, 'r'){|f|
@@ -86,7 +93,7 @@ File.open(options[:temp], 'w'){|temp_file|
       line.gsub!('　'.to_utf8, '  '.to_utf8)
       line.lstrip!
       #todo escape html code
-      temp_file.print '<p>'+line+'</p>'
+      temp_file.print '<p>'+h(line)+'</p>'
     }
 
     temp_file.print html_footer
@@ -94,17 +101,7 @@ File.open(options[:temp], 'w'){|temp_file|
     puts 'end'
   }
 }
-
-script_path = File.expand_path(File.dirname(__FILE__))
-if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
-  $stderr.puts 'txt目录下不能有xiang.css'
-  exit 
-end
-File.copy(File.join(script_path, 'xiang.css'), 'xiang.css')
-result = `temp/kindlegen.exe #{options[:temp]}`
+result = `temp/kindlegen.exe "#{options[:temp]}"`
 $stderr.puts result if result.include?('Error')
 File.delete(options[:temp])
-if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
-  File.delete('xiang.css')
-end
 
