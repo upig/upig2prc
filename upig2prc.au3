@@ -23,38 +23,38 @@
 
 ;$dlgMain = GUICreate("upig2prc (v8.10.30.19) 将Txt批量转换到Lrf (sony prs 505)", 631, 443, 193, 115, -1, 0x00000018)
 #Region ### START Koda GUI section ### Form=d:\3_appdata\microsoft\desktop\upig2prc\新版\ui.kxf
-$dlgMain = GUICreate("upig2prc (10.4.27.1) 将Txt批量转换到prc(Kindle电子书)", 640, 465, 193, 115, -1, 0x00000018)
-$ctlEditOutput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
+$dlgMain = GUICreate("upig2prc (10.4.27.1) 将Txt批量转换到prc(Kindle电子书)", 640, 415, 193, 115, -1, 0x00000018)
+$ctlEditOutput = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
-$ctlEditFileInput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
+$ctlEditFileInput = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
-$ctlEditHelp = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
+$ctlEditHelp = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
 $ctlProgressTotal = GUICtrlCreateProgress(56, 6, 358, 16)
 $ctlProgressInd = GUICtrlCreateProgress(488, 6, 134, 16)
-$ctlCheckEnglishOnly = GUICtrlCreateCheckbox("纯英文", 440, 34, 65, 17)
-$ctlComboEncoding = GUICtrlCreateCombo("普通编码", 70, 34, 79, 25)
-GUICtrlSetData(-1, "普通编码|Unicode(UTF-16)|UTF-8")
-$ctlEditParamTxt2lrf = GUICtrlCreateInput("", 267, 35, 151, 21)
-$ctlEditPrefix = GUICtrlCreateInput("", 70, 66, 79, 21)
+;$ctlCheckEnglishOnly = GUICtrlCreateCheckbox("纯英文", 440, 34, 65, 17)
+;$ctlComboEncoding = GUICtrlCreateCombo("普通编码", 70, 34, 79, 25)
+;GUICtrlSetData(-1, "普通编码|Unicode(UTF-16)|UTF-8")
+;$ctlEditParamTxt2lrf = GUICtrlCreateInput("", 267, 35, 151, 21)
+;$ctlEditPrefix = GUICtrlCreateInput("", 70, 66, 79, 21)
 $Label3 = GUICtrlCreateLabel("总进度", 8, 8, 40, 17)
-$Label5 = GUICtrlCreateLabel("前缀：", 30, 68, 40, 17)
-$ctlEditPathOutput = GUICtrlCreateInput("", 267, 67, 151, 21)
-$Label1 = GUICtrlCreateLabel("", 237, 64, 4, 4)
-$Label6 = GUICtrlCreateLabel("", 272, 106, 4, 4)
-$Label7 = GUICtrlCreateLabel("TXT2LRF参数：", 180, 37, 87, 17)
-$ctlCheckUseOutputPath = GUICtrlCreateCheckbox("输出路径：", 180, 70, 81, 17)
-$Label2 = GUICtrlCreateLabel("编码格式：", 6, 37, 64, 17)
+;$Label5 = GUICtrlCreateLabel("前缀：", 30, 68, 40, 17)
+;$ctlEditPathOutput = GUICtrlCreateInput("", 267, 67, 151, 21)
+;$Label1 = GUICtrlCreateLabel("", 237, 64, 4, 4)
+;$Label6 = GUICtrlCreateLabel("", 272, 106, 4, 4)
+;$Label7 = GUICtrlCreateLabel("TXT2LRF参数：", 180, 37, 87, 17)
+;$ctlCheckUseOutputPath = GUICtrlCreateCheckbox("输出路径：", 180, 70, 81, 17)
+;$Label2 = GUICtrlCreateLabel("编码格式：", 6, 37, 64, 17)
 $ctlBtnTest = GUICtrlCreateButton("ctlBtnTest", 432, 16, 35, 17, 0)
-$ctlCheckAutoParagraph = GUICtrlCreateCheckbox("智能分段", 534, 34, 89, 17)
+;$ctlCheckAutoParagraph = GUICtrlCreateCheckbox("智能分段", 534, 34, 89, 17)
 $Label4 = GUICtrlCreateLabel("子进度", 440, 8, 40, 17)
-$ctlBtnVist17memo = GUICtrlCreateButton("去和书友交流", 438, 64, 107, 25, 0)
-$ctlBtnHelp = GUICtrlCreateButton("帮助", 552, 64, 67, 25, 0)
-$Label8 = GUICtrlCreateLabel("请将txt文件或文件夹拖入到下面的文本框中。  upig出品，欢迎书友到17memo.com交流", 8, 96, 472, 17)
+$ctlBtnVist17memo = GUICtrlCreateButton("去和书友交流", 438, 33, 107, 25, 0)
+$ctlBtnHelp = GUICtrlCreateButton("帮助", 552, 33, 67, 25, 0)
+$Label8 = GUICtrlCreateLabel("请将txt文件或文件夹拖入到下面的文本框中。upig出品(31531640@qq.com)", 8,36, 472, 17)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
-Global $helpStr = StringFormat("　请将txt文件或文件夹拖到此文本框中，支持多个一起拖，只支持遍历一级文件夹\r\n\r\n使用技巧：\r\n　一般情况下保持默认参数\r\n　对于纯英文书请选上 [纯英文] 复选框，排版会更好\r\n　文件转换出错或出现乱码后可尝试修改 [编码格式]\r\n　txt文件中的段落被分割成若干行的，可尝试 [智能分段]\r\n　改字体请使用或去掉TXT2LRF参数--override-css="&Chr(34)&"code {font-family: "&Chr(39)&"Swis721 BT"&Chr(39)&"}"&Chr(34)&"\r\n　加页眉使用TXT2LRF参数--header 调整书边空白改TXT2LRF参数--left-margin=10等\r\n　对喜欢大字体有朋友建议用如下TXT2LRF参数替换上面的\r\n    --author=upig2prc --left-margin=10 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css="&Chr(34)&"code {font-family: "&Chr(39)&"Swis721 BT"&Chr(39)&"}"&Chr(34)&" --base-font-size=12 \r\n　不想在书前插入目录在ini文件中设置$g_bInsertTOC=False\r\n　关闭此软件后删除ini文件可恢复默认参数，还有些参数可以自己尝试\r\n\r\n联系与反馈，常见问题解答：\r\n　网站：http://17memo.com\r\n　邮箱或QQ：31531640@qq.com\r\n\r\n注意事项：\r\n　TXT2LRF各参数间要加空格隔开\r\n")
+Global $helpStr = StringFormat("　请将txt文件或文件夹拖到此文本框中，支持多个一起拖，只支持遍历一级文件夹\r\n\r\n联系与反馈，常见问题解答：\r\n　网站：http://17memo.com\r\n　邮箱或QQ：31531640@qq.com\r\n")
 
 
 #include <File.au3>
@@ -75,14 +75,14 @@ AutoItSetOption("MustDeclareVars", 1)
 Global $g_oIE = _IECreate ("http://17memo.com/forums/forumdisplay.php?fid=2&filter=type&typeid=2", 0, 0, 0)
 
 Global $g_errCount = 0
-Global $g_totalFileCount = 0
+Global $g_totalFileCount = 0;
 Global $g_tempFileDir = @ScriptDir & "\__temp_upig_"
 Global $g_inifileName = @ScriptDir & "\upig2prc.ini"
 Global $g_iniSection = "Setting20"
-GUICtrlSetData($ctlEditPrefix,			IniRead($g_inifileName, $g_iniSection, "$ctlEditPrefix", 			"e."))
-GUICtrlSetData($ctlComboEncoding, 	" ",IniRead($g_inifileName, $g_iniSection, "$ctlComboEncoding", 		"普通编码"))
-GUICtrlSetData($ctlEditPathOutput, 		IniRead($g_inifileName, $g_iniSection, "$ctlEditPathOutput", 		""))
-GUICtrlSetData($ctlEditParamTxt2lrf, 	IniRead($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", 		"--author=upig2prc --left-margin=0 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css=""code {font-family: 'Swis721 BT'}"""))
+;GUICtrlSetData($ctlEditPrefix,			IniRead($g_inifileName, $g_iniSection, "$ctlEditPrefix", 			"e."))
+;GUICtrlSetData($ctlComboEncoding, 	" ",IniRead($g_inifileName, $g_iniSection, "$ctlComboEncoding", 		"普通编码"))
+;GUICtrlSetData($ctlEditPathOutput, 		IniRead($g_inifileName, $g_iniSection, "$ctlEditPathOutput", 		""))
+;GUICtrlSetData($ctlEditParamTxt2lrf, 	IniRead($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", 		"--author=upig2prc --left-margin=0 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css=""code {font-family: 'Swis721 BT'}"""))
 Global $g_bEngilsh = 					IniRead($g_inifileName, $g_iniSection, "$g_bEngilsh", 			False)
 Global $g_bUseOutputPath= 				IniRead($g_inifileName, $g_iniSection, "$g_bUseOutputPath", 	False)
 Global $g_ToolName = 					IniRead($g_inifileName, $g_iniSection, "$g_ToolName", 			"upigcmd")
@@ -109,34 +109,34 @@ If $g_bRelease==False Then _DebugSetup("upig2prc")
 
 ;"upig2prc工具用于将中文txt文件批量转换为lrf文件" & @CRLF & @CRLF & "请将需要转换的文件或文件夹拖进来" & @CRLF & "支持多个文件，文件夹一起拖" & @CRLF &"只支持遍历一级文件夹"&@CRLF&@CRLF &@CRLF &@CRLF &@CRLF &@CRLF & "注意:运行本软件先得安装Calibre(http://calibre.kovidgoyal.net)" & @CRLF & "说明:文件转换出错或出现乱码后可尝试修改GBK等参数" & @CRLF & "联系:有什么Bug欢迎反馈给我(31531640@qq.com)"
 GUICtrlSetState($ctlEditFileInput, $GUI_DROPACCEPTED)
-;GUICtrlSetData($ctlEditOutput, $helpStr)
+GUICtrlSetData($ctlEditOutput, $helpStr)
 GUICtrlSetData($ctlEditFileInput, "")
-;GUICtrlSetData($ctlEditHelp, $helpStr)
+GUICtrlSetData($ctlEditHelp, $helpStr)
 GUICtrlSetState($ctlBtnTest, $GUI_HIDE)
 
 If $g_bEngilsh==True Then 
-	GUICtrlSetState($ctlCheckEnglishOnly, $GUI_CHECKED)
+;	GUICtrlSetState($ctlCheckEnglishOnly, $GUI_CHECKED)
 Else
-	GUICtrlSetState($ctlCheckEnglishOnly, $GUI_UNCHECKED)
+;	GUICtrlSetState($ctlCheckEnglishOnly, $GUI_UNCHECKED)
 	;MsgBox(0, "$g_bEngilsh", $g_bEngilsh)
 EndIf
 
 If $g_bAutoParagraph==True Then
-	GUICtrlSetState($ctlCheckAutoParagraph, $GUI_CHECKED)
+;	GUICtrlSetState($ctlCheckAutoParagraph, $GUI_CHECKED)
 Else
-	GUICtrlSetState($ctlCheckAutoParagraph, $GUI_UNCHECKED)
+;	GUICtrlSetState($ctlCheckAutoParagraph, $GUI_UNCHECKED)
 EndIf
 
 
 If $g_bUseOutputPath==True Then 
-	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_CHECKED)
-	GUICtrlSetState($ctlEditPathOutput, $GUI_ENABLE)
+;	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_CHECKED)
+;	GUICtrlSetState($ctlEditPathOutput, $GUI_ENABLE)
 Else
-	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_UNCHECKED)
-	GUICtrlSetState($ctlEditPathOutput, $GUI_DISABLE)
+;	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_UNCHECKED)
+;	GUICtrlSetState($ctlEditPathOutput, $GUI_DISABLE)
 EndIf
 
-DirCreate($g_tempFileDir)
+;DirCreate($g_tempFileDir)
 
 If $g_reg ==-1 Then
 	RegWrite("HKEY_CLASSES_ROOT\txtfile\shell\A用&upig2prc转换\command", "", "REG_SZ", @ScriptFullPath&" ""%1""")
@@ -167,17 +167,16 @@ While 1
 	
 	If $g_BookListReady==True Then
 		If $g_BookListShowed==False then 
-			ShowBookList()
+			;ShowBookList()
 			$g_BookListShowed = True
 			$g_BookListReady = False
 		EndIf
 	Else
-		if(_IELoadWait ($g_oIE, 0, 1))==1 Then
-			$g_BookListReady = True
-		EndIf		
+		;if(_IELoadWait ($g_oIE, 0, 1))==1 Then
+		;	$g_BookListReady = True
+		;EndIf		
 	EndIf
-	
-	
+		
 	Switch $msg	
 		;if $msg<>0 Then MsgBox(0, "kdk", "kdk33d")
 		case  $GUI_EVENT_DROPPED 
@@ -189,10 +188,10 @@ While 1
 			ConvertDirFileMultiLine($fileTempInput)	
 		case $GUI_EVENT_CLOSE 
 			;@todo write ini when close
-			IniWrite($g_inifileName, $g_iniSection, "$ctlEditPrefix", GUICtrlRead($ctlEditPrefix))
-			IniWrite($g_inifileName, $g_iniSection, "$ctlComboEncoding", GUICtrlRead($ctlComboEncoding))
-			IniWrite($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", GUICtrlRead($ctlEditParamTxt2lrf))
-			IniWrite($g_inifileName, $g_iniSection, "$ctlEditPathOutput", GUICtrlRead($ctlEditPathOutput))
+;			IniWrite($g_inifileName, $g_iniSection, "$ctlEditPrefix", GUICtrlRead($ctlEditPrefix))
+;			IniWrite($g_inifileName, $g_iniSection, "$ctlComboEncoding", GUICtrlRead($ctlComboEncoding))
+;			IniWrite($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", GUICtrlRead($ctlEditParamTxt2lrf))
+;			IniWrite($g_inifileName, $g_iniSection, "$ctlEditPathOutput", GUICtrlRead($ctlEditPathOutput))
 			IniWrite($g_inifileName, $g_iniSection, "$g_ToolName", $g_ToolName )
 			IniWrite($g_inifileName, $g_iniSection, "$g_bEngilsh", $g_bEngilsh )
 			IniWrite($g_inifileName, $g_iniSection, "$g_bUseOutputPath", $g_bUseOutputPath )
@@ -213,24 +212,7 @@ While 1
 			ExitLoop
 		case $ctlBtnTest 
 			AutoTest()
-		case $ctlCheckEnglishOnly 
-			;MsgBox(0, "$g_bEngilsh", $g_bEngilsh)
-			$g_bEngilsh = ($g_bEngilsh==False)
-			;MsgBox(0, "$g_bEngilsh", $g_bEngilsh)
-		case $ctlCheckUseOutputPath
-			$g_bUseOutputPath = ($g_bUseOutputPath==False)
-			if $g_bUseOutputPath==True Then
-				GUICtrlSetState($ctlEditPathOutput, $GUI_ENABLE)
-			Else
-				GUICtrlSetState($ctlEditPathOutput, $GUI_DISABLE)	
-			EndIf
-		case $ctlCheckAutoParagraph 
-			$g_bAutoParagraph = ($g_bAutoParagraph==False)
-			If $g_bAutoParagraph==True Then
-				GUICtrlSetState($ctlCheckAutoParagraph, $GUI_CHECKED)
-			Else
-				GUICtrlSetState($ctlCheckAutoParagraph, $GUI_UNCHECKED)
-			EndIf
+
 		case $ctlBtnVist17memo
 			ShellExecute ("http://17memo.com/forums/forumdisplay.php?fid=2")
 		case  $ctlBtnHelp
@@ -274,9 +256,9 @@ Func ConvertFile($inputFileName)
 	
 	Local $workPath = $szDrive&$szDir
 
-	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
-	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
-	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
+;	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
+;	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
+;	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
 	If $inputFileExt == ".prc" Or $inputFileExt == ".exe" Then Return
 	$g_totalFileCount += 1
 	IceLogMsg("["&$g_totalFileCount&"]  正在转换中，请稍候: " & $inputFileTitle & $inputFileExt)
@@ -284,11 +266,7 @@ Func ConvertFile($inputFileName)
 	
 	
 	Local $cvtFileName = 	$inputFileName
-	Local $tempTxtFileName = $g_tempFileDir & "\" & $inputFileTitle & ".html"
-	Local $tempParam = " --temp=""" & $tempTxtFileName&""""
-	Local $outputParam=""
-	If GUICtrlRead($ctlEditPrefix)<>"" or $pathOutPut<>"" Then $outputParam = " --output=""" & $pathOutPut & $inputFileTitle & ".prc"" "
-	
+
  ;   Run it! upigcmd.exe
 ;	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $encodingParm & $publisher & $debugParam & $outputParam & GUICtrlRead($ctlEditParamTxt2lrf) & " """ & $cvtFileName & """ " &$debugParam2   
 ;	ConsoleWrite($cmd)
@@ -306,7 +284,7 @@ Func ConvertFile($inputFileName)
 		IceLogMsg(@CRLF&"文件转换出错: " & $inputFileName & @CRLF & $errMsg & @CRLF)
 	EndIf
 	if $g_bRelease==True Then 
-		FileDelete($tempTxtFileName)
+;		FileDelete($tempTxtFileName)
 	EndIf
 EndFunc  
 
