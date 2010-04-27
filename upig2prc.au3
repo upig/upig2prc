@@ -167,14 +167,14 @@ While 1
 	
 	If $g_BookListReady==True Then
 		If $g_BookListShowed==False then 
-			;ShowBookList()
+			ShowBookList()
 			$g_BookListShowed = True
 			$g_BookListReady = False
 		EndIf
 	Else
-		;if(_IELoadWait ($g_oIE, 0, 1))==1 Then
-		;	$g_BookListReady = True
-		;EndIf		
+		if(_IELoadWait ($g_oIE, 0, 1))==1 Then
+			$g_BookListReady = True
+		EndIf		
 	EndIf
 		
 	Switch $msg	
