@@ -5,6 +5,7 @@ require 'optparse'
 require 'jcode'
 require 'iconv'  
 require 'rchardet'
+require 'ftools'
 
 class String  
   def to_gbk(src_encoding='UTF-8')
@@ -34,7 +35,7 @@ optparse = OptionParser.new do|opts|
   upig2prc [options] file_name"
 EOF
 
-  options[:temp] = 'upig2prc_temp.html' 
+  options[:temp] = '' 
   opts.on( '-t', '--temp output_name', '指定临时文件名') do |f|
     options[:temp] = f 
   end
@@ -54,6 +55,7 @@ optparse.parse!
 
 keyword = ARGV.join(' ') 
 options[:output] = File.basename(keyword, '.txt')+'.prc' if options[:output] == ''
+options[:temp] = File.basename(keyword, '.txt')+'.html' if options[:temp] == ''
 
 $stderr.puts optparse if keyword.strip==''
 
@@ -89,22 +91,7 @@ File.open(options[:temp], 'w'){|temp_file|
   }
 }
 
-`temp/kindlegen.exe #{options[:temp]} -o #{options[:output]}`
-
-#$filetypes='*.{txt}'
-
-
-
-#puts options
-
-
-#convert html to prc
-
-#temp_path 
-#参考那个临时文件，好好改一下代码，可以生成比较漂亮的kindle文件
-#Dir.glob("**/#{$filetypes}").each {|fileName|
-  #convert txt to html
-  #convert html to prc
-  #puts `temp/kindlegen.exe #{fileName}`
-#}
+result = `temp/kindlegen.exe #{options[:temp]}`
+$stderr.puts result if result.include?('Error')
+File.delete(options[:temp])
 

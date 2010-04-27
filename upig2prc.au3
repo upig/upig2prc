@@ -292,10 +292,10 @@ Func ConvertFile($inputFileName)
  ;   Run it! upigcmd.exe
 ;	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $encodingParm & $publisher & $debugParam & $outputParam & GUICtrlRead($ctlEditParamTxt2lrf) & " """ & $cvtFileName & """ " &$debugParam2   
 ;	ConsoleWrite($cmd)
-	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $outputParam & $tempParam & " """ & $cvtFileName & """ " 
+	Local $cmd = @ComSpec & " /c " & @ScriptDir& '\'&$g_ToolName &" "& " """ & $cvtFileName & """ " 
 	
 	ConsoleWrite($cmd)
-	Local $pID = Run($cmd, @ScriptDir, @SW_HIDE, $STDERR_CHILD+$STDOUT_CHILD)
+	Local $pID = Run($cmd, $workPath, @SW_HIDE, $STDERR_CHILD+$STDOUT_CHILD)
 	While ProcessExists($pID)
 		Sleep(500)
 	WEnd
