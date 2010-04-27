@@ -68,7 +68,7 @@ end
 
 script_path = File.expand_path(File.dirname(__FILE__))
 html_header =<<"EOF"
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link REL="stylesheet" TYPE="text/css" HREF="file://#{script_path}/xiang.css"></head><body topmargin="0" leftmargin="0" bottommargin="0" rightmargin="0">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link REL="stylesheet" TYPE="text/css" HREF="xiang.css"></head><body topmargin="0" leftmargin="0" bottommargin="0" rightmargin="0">
 EOF
 html_footer =<<'EOF'
 </body></html>
@@ -101,7 +101,19 @@ File.open(options[:temp], 'w'){|temp_file|
     puts 'end'
   }
 }
+
+if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
+  $stderr.puts 'txt目录下不能有xiang.css'
+  exit 
+end
+
+File.copy(File.join(script_path, 'xiang.css'), 'xiang.css')
 result = `temp/kindlegen.exe "#{options[:temp]}"`
 $stderr.puts result if result.include?('Error')
 File.delete(options[:temp])
+
+if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
+  File.delete('xiang.css')
+end
+
 
