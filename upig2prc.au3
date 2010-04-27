@@ -4,9 +4,9 @@
 
 
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_icon=upig2lrf.ico
-#AutoIt3Wrapper_Res_Comment=upig2lrf by 31531640@qq.com http://17memo.com
-#AutoIt3Wrapper_Res_Description=upig2lrf txtlrf
+#AutoIt3Wrapper_icon=upig2prc.ico
+#AutoIt3Wrapper_Res_Comment=upig2prc by 31531640@qq.com http://17memo.com
+#AutoIt3Wrapper_Res_Description=upig2prc txtlrf
 #AutoIt3Wrapper_Res_Fileversion=9.2.25.24
 #AutoIt3Wrapper_Res_Language=2052
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
@@ -21,9 +21,9 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 
-;$dlgMain = GUICreate("upig2Lrf (v8.10.30.19) ½«TxtÅúÁ¿×ª»»µ½Lrf (sony prs 505)", 631, 443, 193, 115, -1, 0x00000018)
-#Region ### START Koda GUI section ### Form=d:\3_appdata\microsoft\desktop\upig2lrf\ĞÂ°æ\ui.kxf
-$dlgMain = GUICreate("upig2Lrf (9.2.25.24) ½«TxtÅúÁ¿×ª»»µ½Lrf (sony prs 505)", 640, 465, 193, 115, -1, 0x00000018)
+;$dlgMain = GUICreate("upig2prc (v8.10.30.19) ½«TxtÅúÁ¿×ª»»µ½Lrf (sony prs 505)", 631, 443, 193, 115, -1, 0x00000018)
+#Region ### START Koda GUI section ### Form=d:\3_appdata\microsoft\desktop\upig2prc\ĞÂ°æ\ui.kxf
+$dlgMain = GUICreate("upig2prc (10.4.27.1) ½«TxtÅúÁ¿×ª»»µ½prc(Kindleµç×ÓÊé)", 640, 465, 193, 115, -1, 0x00000018)
 $ctlEditOutput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
 $ctlEditFileInput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
@@ -54,7 +54,7 @@ $Label8 = GUICtrlCreateLabel("Çë½«txtÎÄ¼ş»òÎÄ¼ş¼ĞÍÏÈëµ½ÏÂÃæµÄÎÄ±¾¿òÖĞ¡£  upig³öÆ
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
-Global $helpStr = StringFormat("¡¡Çë½«txtÎÄ¼ş»òÎÄ¼ş¼ĞÍÏµ½´ËÎÄ±¾¿òÖĞ£¬Ö§³Ö¶à¸öÒ»ÆğÍÏ£¬Ö»Ö§³Ö±éÀúÒ»¼¶ÎÄ¼ş¼Ğ\r\n\r\nÊ¹ÓÃ¼¼ÇÉ£º\r\n¡¡Ò»°ãÇé¿öÏÂ±£³ÖÄ¬ÈÏ²ÎÊı\r\n¡¡¶ÔÓÚ´¿Ó¢ÎÄÊéÇëÑ¡ÉÏ [´¿Ó¢ÎÄ] ¸´Ñ¡¿ò£¬ÅÅ°æ»á¸üºÃ\r\n¡¡ÎÄ¼ş×ª»»³ö´í»ò³öÏÖÂÒÂëºó¿É³¢ÊÔĞŞ¸Ä [±àÂë¸ñÊ½]\r\n¡¡txtÎÄ¼şÖĞµÄ¶ÎÂä±»·Ö¸î³ÉÈô¸ÉĞĞµÄ£¬¿É³¢ÊÔ [ÖÇÄÜ·Ö¶Î]\r\n¡¡¸Ä×ÖÌåÇëÊ¹ÓÃ»òÈ¥µôTXT2LRF²ÎÊı--override-css="&Chr(34)&"code {font-family: "&Chr(39)&"Swis721 BT"&Chr(39)&"}"&Chr(34)&"\r\n¡¡¼ÓÒ³Ã¼Ê¹ÓÃTXT2LRF²ÎÊı--header µ÷ÕûÊé±ß¿Õ°×¸ÄTXT2LRF²ÎÊı--left-margin=10µÈ\r\n¡¡¶ÔÏ²»¶´ó×ÖÌåÓĞÅóÓÑ½¨ÒéÓÃÈçÏÂTXT2LRF²ÎÊıÌæ»»ÉÏÃæµÄ\r\n    --author=upig2lrf --left-margin=10 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css="&Chr(34)&"code {font-family: "&Chr(39)&"Swis721 BT"&Chr(39)&"}"&Chr(34)&" --base-font-size=12 \r\n¡¡²»ÏëÔÚÊéÇ°²åÈëÄ¿Â¼ÔÚiniÎÄ¼şÖĞÉèÖÃ$g_bInsertTOC=False\r\n¡¡¹Ø±Õ´ËÈí¼şºóÉ¾³ıiniÎÄ¼ş¿É»Ö¸´Ä¬ÈÏ²ÎÊı£¬»¹ÓĞĞ©²ÎÊı¿ÉÒÔ×Ô¼º³¢ÊÔ\r\n\r\nÁªÏµÓë·´À¡£¬³£¼ûÎÊÌâ½â´ğ£º\r\n¡¡ÍøÕ¾£ºhttp://17memo.com\r\n¡¡ÓÊÏä»òQQ£º31531640@qq.com\r\n\r\n×¢ÒâÊÂÏî£º\r\n¡¡TXT2LRF¸÷²ÎÊı¼äÒª¼Ó¿Õ¸ñ¸ô¿ª\r\n")
+Global $helpStr = StringFormat("¡¡Çë½«txtÎÄ¼ş»òÎÄ¼ş¼ĞÍÏµ½´ËÎÄ±¾¿òÖĞ£¬Ö§³Ö¶à¸öÒ»ÆğÍÏ£¬Ö»Ö§³Ö±éÀúÒ»¼¶ÎÄ¼ş¼Ğ\r\n\r\nÊ¹ÓÃ¼¼ÇÉ£º\r\n¡¡Ò»°ãÇé¿öÏÂ±£³ÖÄ¬ÈÏ²ÎÊı\r\n¡¡¶ÔÓÚ´¿Ó¢ÎÄÊéÇëÑ¡ÉÏ [´¿Ó¢ÎÄ] ¸´Ñ¡¿ò£¬ÅÅ°æ»á¸üºÃ\r\n¡¡ÎÄ¼ş×ª»»³ö´í»ò³öÏÖÂÒÂëºó¿É³¢ÊÔĞŞ¸Ä [±àÂë¸ñÊ½]\r\n¡¡txtÎÄ¼şÖĞµÄ¶ÎÂä±»·Ö¸î³ÉÈô¸ÉĞĞµÄ£¬¿É³¢ÊÔ [ÖÇÄÜ·Ö¶Î]\r\n¡¡¸Ä×ÖÌåÇëÊ¹ÓÃ»òÈ¥µôTXT2LRF²ÎÊı--override-css="&Chr(34)&"code {font-family: "&Chr(39)&"Swis721 BT"&Chr(39)&"}"&Chr(34)&"\r\n¡¡¼ÓÒ³Ã¼Ê¹ÓÃTXT2LRF²ÎÊı--header µ÷ÕûÊé±ß¿Õ°×¸ÄTXT2LRF²ÎÊı--left-margin=10µÈ\r\n¡¡¶ÔÏ²»¶´ó×ÖÌåÓĞÅóÓÑ½¨ÒéÓÃÈçÏÂTXT2LRF²ÎÊıÌæ»»ÉÏÃæµÄ\r\n    --author=upig2prc --left-margin=10 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css="&Chr(34)&"code {font-family: "&Chr(39)&"Swis721 BT"&Chr(39)&"}"&Chr(34)&" --base-font-size=12 \r\n¡¡²»ÏëÔÚÊéÇ°²åÈëÄ¿Â¼ÔÚiniÎÄ¼şÖĞÉèÖÃ$g_bInsertTOC=False\r\n¡¡¹Ø±Õ´ËÈí¼şºóÉ¾³ıiniÎÄ¼ş¿É»Ö¸´Ä¬ÈÏ²ÎÊı£¬»¹ÓĞĞ©²ÎÊı¿ÉÒÔ×Ô¼º³¢ÊÔ\r\n\r\nÁªÏµÓë·´À¡£¬³£¼ûÎÊÌâ½â´ğ£º\r\n¡¡ÍøÕ¾£ºhttp://17memo.com\r\n¡¡ÓÊÏä»òQQ£º31531640@qq.com\r\n\r\n×¢ÒâÊÂÏî£º\r\n¡¡TXT2LRF¸÷²ÎÊı¼äÒª¼Ó¿Õ¸ñ¸ô¿ª\r\n")
 
 
 #include <File.au3>
@@ -77,15 +77,15 @@ Global $g_oIE = _IECreate ("http://17memo.com/forums/forumdisplay.php?fid=2&filt
 Global $g_errCount = 0
 Global $g_totalFileCount = 0
 Global $g_tempFileDir = @ScriptDir & "\__temp_upig_"
-Global $g_inifileName = @ScriptDir & "\upig2lrf.ini"
+Global $g_inifileName = @ScriptDir & "\upig2prc.ini"
 Global $g_iniSection = "Setting20"
 GUICtrlSetData($ctlEditPrefix,			IniRead($g_inifileName, $g_iniSection, "$ctlEditPrefix", 			"e."))
 GUICtrlSetData($ctlComboEncoding, 	" ",IniRead($g_inifileName, $g_iniSection, "$ctlComboEncoding", 		"ÆÕÍ¨±àÂë"))
 GUICtrlSetData($ctlEditPathOutput, 		IniRead($g_inifileName, $g_iniSection, "$ctlEditPathOutput", 		""))
-GUICtrlSetData($ctlEditParamTxt2lrf, 	IniRead($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", 		"--author=upig2lrf --left-margin=0 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css=""code {font-family: 'Swis721 BT'}"""))
+GUICtrlSetData($ctlEditParamTxt2lrf, 	IniRead($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", 		"--author=upig2prc --left-margin=0 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css=""code {font-family: 'Swis721 BT'}"""))
 Global $g_bEngilsh = 					IniRead($g_inifileName, $g_iniSection, "$g_bEngilsh", 			False)
 Global $g_bUseOutputPath= 				IniRead($g_inifileName, $g_iniSection, "$g_bUseOutputPath", 	False)
-Global $g_ToolName = 					IniRead($g_inifileName, $g_iniSection, "$g_ToolName", 			"txt2lrf")
+Global $g_ToolName = 					IniRead($g_inifileName, $g_iniSection, "$g_ToolName", 			"upigcmd")
 Global $g_titleMaxStrLen = 				IniRead($g_inifileName, $g_iniSection, "$g_titleMaxStrLen", 	70)
 Global $g_titleWord = 					IniRead($g_inifileName, $g_iniSection, "$g_titleWord", 			"(?i)CHAPTER|.{0,1}µÚ{0,1}[ ¡¡]{0,10}[Ğò0-9£°£±£²£³£´£µ£¶£·£¸£¹©–Ò»¶şÈıËÄÎåÁùÆß°Ë¾Å¸öÊ®°ÙÇ§ÍòÁãÒ¼·¡ÈşËÁÎéÂ½Æâ°Æ¾ÁÊ°°ÛÇªÈf]{1,15}[ ¡¡]{0,10}[ÕÂ|»Ø|¾í|Æª|½Ú|²¿|¼¯].{0,1}")
 Global $g_titleWordInvallid = 			IniRead($g_inifileName, $g_iniSection, "$g_titleWordInvallid", 	"»ØºÏ|½Ú¿Î|²¿·Ö")
@@ -103,11 +103,11 @@ Global $g_reg = 						IniRead($g_inifileName, $g_iniSection, "$g_reg", 				-1)
 
 
 ;for debug
-If $g_bRelease==False Then _DebugSetup("upig2lrf")
+If $g_bRelease==False Then _DebugSetup("upig2prc")
 
 ;GUICtrlSetState(
 
-;"upig2lrf¹¤¾ßÓÃÓÚ½«ÖĞÎÄtxtÎÄ¼şÅúÁ¿×ª»»ÎªlrfÎÄ¼ş" & @CRLF & @CRLF & "Çë½«ĞèÒª×ª»»µÄÎÄ¼ş»òÎÄ¼ş¼ĞÍÏ½øÀ´" & @CRLF & "Ö§³Ö¶à¸öÎÄ¼ş£¬ÎÄ¼ş¼ĞÒ»ÆğÍÏ" & @CRLF &"Ö»Ö§³Ö±éÀúÒ»¼¶ÎÄ¼ş¼Ğ"&@CRLF&@CRLF &@CRLF &@CRLF &@CRLF &@CRLF & "×¢Òâ:ÔËĞĞ±¾Èí¼şÏÈµÃ°²×°Calibre(http://calibre.kovidgoyal.net)" & @CRLF & "ËµÃ÷:ÎÄ¼ş×ª»»³ö´í»ò³öÏÖÂÒÂëºó¿É³¢ÊÔĞŞ¸ÄGBKµÈ²ÎÊı" & @CRLF & "ÁªÏµ:ÓĞÊ²Ã´Bug»¶Ó­·´À¡¸øÎÒ(31531640@qq.com)"
+;"upig2prc¹¤¾ßÓÃÓÚ½«ÖĞÎÄtxtÎÄ¼şÅúÁ¿×ª»»ÎªlrfÎÄ¼ş" & @CRLF & @CRLF & "Çë½«ĞèÒª×ª»»µÄÎÄ¼ş»òÎÄ¼ş¼ĞÍÏ½øÀ´" & @CRLF & "Ö§³Ö¶à¸öÎÄ¼ş£¬ÎÄ¼ş¼ĞÒ»ÆğÍÏ" & @CRLF &"Ö»Ö§³Ö±éÀúÒ»¼¶ÎÄ¼ş¼Ğ"&@CRLF&@CRLF &@CRLF &@CRLF &@CRLF &@CRLF & "×¢Òâ:ÔËĞĞ±¾Èí¼şÏÈµÃ°²×°Calibre(http://calibre.kovidgoyal.net)" & @CRLF & "ËµÃ÷:ÎÄ¼ş×ª»»³ö´í»ò³öÏÖÂÒÂëºó¿É³¢ÊÔĞŞ¸ÄGBKµÈ²ÎÊı" & @CRLF & "ÁªÏµ:ÓĞÊ²Ã´Bug»¶Ó­·´À¡¸øÎÒ(31531640@qq.com)"
 GUICtrlSetState($ctlEditFileInput, $GUI_DROPACCEPTED)
 ;GUICtrlSetData($ctlEditOutput, $helpStr)
 GUICtrlSetData($ctlEditFileInput, "")
@@ -139,16 +139,16 @@ EndIf
 DirCreate($g_tempFileDir)
 
 If $g_reg ==-1 Then
-	RegWrite("HKEY_CLASSES_ROOT\txtfile\shell\AÓÃ&upig2lrf×ª»»\command", "", "REG_SZ", @ScriptFullPath&" ""%1""")
-	RegWrite("HKEY_CLASSES_ROOT\txtfile\shell\AÓÃ&upig2lrf×ª»»\", "", "REG_SZ", "ÓÃ&upig2lrf×ª»»")
-	RegWrite("HKEY_CLASSES_ROOT\Folder\shell\AÓÃ&upig2lrf×ª»»\command", "", "REG_SZ", @ScriptFullPath&" ""%1""")
-	RegWrite("HKEY_CLASSES_ROOT\Folder\shell\AÓÃ&upig2lrf×ª»»\", "", "REG_SZ", "ÓÃ&upig2lrf×ª»»")
+	RegWrite("HKEY_CLASSES_ROOT\txtfile\shell\AÓÃ&upig2prc×ª»»\command", "", "REG_SZ", @ScriptFullPath&" ""%1""")
+	RegWrite("HKEY_CLASSES_ROOT\txtfile\shell\AÓÃ&upig2prc×ª»»\", "", "REG_SZ", "ÓÃ&upig2prc×ª»»")
+	RegWrite("HKEY_CLASSES_ROOT\Folder\shell\AÓÃ&upig2prc×ª»»\command", "", "REG_SZ", @ScriptFullPath&" ""%1""")
+	RegWrite("HKEY_CLASSES_ROOT\Folder\shell\AÓÃ&upig2prc×ª»»\", "", "REG_SZ", "ÓÃ&upig2prc×ª»»")
 	$g_reg = 1
 EndIf
 
 If $g_reg ==0 Then
-	RegDelete("HKEY_CLASSES_ROOT\txtfile\shell\AÓÃ&upig2lrf×ª»»\")
-	RegDelete("HKEY_CLASSES_ROOT\Folder\shell\AÓÃ&upig2lrf×ª»»\")
+	RegDelete("HKEY_CLASSES_ROOT\txtfile\shell\AÓÃ&upig2prc×ª»»\")
+	RegDelete("HKEY_CLASSES_ROOT\Folder\shell\AÓÃ&upig2prc×ª»»\")
 EndIf
 
 Global $g_BookListReady = False
@@ -270,47 +270,32 @@ EndFunc
 Func ConvertFile($inputFileName)	
 	Local $szDrive, $szDir, $inputFileTitle, $inputFileExt
 	_PathSplit($inputFileName, $szDrive, $szDir, $inputFileTitle, $inputFileExt)
+	
+	
 	Local $workPath = $szDrive&$szDir
+
 	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
-	If $g_bUseOutputPath==False Then $pathOutPut=$workPath&"\"
+	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
 	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
-	If $inputFileExt == ".lrf" Or $inputFileExt == ".lrs" Then Return
+	If $inputFileExt == ".prc" Or $inputFileExt == ".exe" Then Return
 	$g_totalFileCount += 1
 	IceLogMsg("["&$g_totalFileCount&"]  ÕıÔÚ×ª»»ÖĞ£¬ÇëÉÔºò: " & $inputFileTitle & $inputFileExt)
-	Local $cvtFileName = 	$inputFileName
-	Local $tempTxtFileName = $g_tempFileDir & "\" & $inputFileTitle & ".txt"
-	Local $encodingParm = GetRealEncoding(GUICtrlRead($ctlComboEncoding))
-	if $encodingParm=="GB18030" Then
-		
-		Local $MarkDownInputFileName = $inputFileName
-		
-		If $g_bAutoParagraph==True Then
-			Local $autoMergeTxtName = $tempTxtFileName&".mrg"
-			ConvertTxtMergeBlock($inputFileName, $autoMergeTxtName)
-			;_DebugOut($autoMergeTxtName)
-			$MarkDownInputFileName = $autoMergeTxtName
-		EndIf
-		
-		ConvertTxt2MarkDown($MarkDownInputFileName, $tempTxtFileName, $inputFileTitle)
-		$cvtFileName = $tempTxtFileName
-		
-		If $g_bAutoParagraph==True Then
-			FileDelete($autoMergeTxtName)
-		EndIf		
-	EndIf
-	Local $outputParam = " "
-	Local $publisher = " "
-	Local $debugParam = " " 
-	Local $debugParam2=" "
-	If $encodingParm <> "" Then $encodingParm = " --encoding="&$encodingParm&" "
-	If GUICtrlRead($ctlEditPrefix)<>"" or $pathOutPut<>"" Then $outputParam = " --output=""" & $pathOutPut & GUICtrlRead($ctlEditPrefix) & $inputFileTitle & ".lrf"" "
-	if $g_bUsePublisher==True Then $publisher = " --publisher=upig2lrf "
-	;$debugParam = " --debug-html-generation ";--blank-after-para  
-	;$debugParam2 = " >__temp.html"
-	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $encodingParm & $publisher & $debugParam & $outputParam & GUICtrlRead($ctlEditParamTxt2lrf) & " """ & $cvtFileName & """ " &$debugParam2   
-;	ConsoleWrite($cmd)
 	
-	Local $pID = Run($cmd, @ScriptDir&"\tools", @SW_HIDE, $STDERR_CHILD+$STDOUT_CHILD)
+	
+	
+	Local $cvtFileName = 	$inputFileName
+	Local $tempTxtFileName = $g_tempFileDir & "\" & $inputFileTitle & ".html"
+	Local $tempParam = " --temp=""" & $tempTxtFileName&""""
+	Local $outputParam=""
+	If GUICtrlRead($ctlEditPrefix)<>"" or $pathOutPut<>"" Then $outputParam = " --output=""" & $pathOutPut & $inputFileTitle & ".prc"" "
+	
+ ;   Run it! upigcmd.exe
+;	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $encodingParm & $publisher & $debugParam & $outputParam & GUICtrlRead($ctlEditParamTxt2lrf) & " """ & $cvtFileName & """ " &$debugParam2   
+;	ConsoleWrite($cmd)
+	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $outputParam & $tempParam & " """ & $cvtFileName & """ " 
+	
+	ConsoleWrite($cmd)
+	Local $pID = Run($cmd, @ScriptDir, @SW_HIDE, $STDERR_CHILD+$STDOUT_CHILD)
 	While ProcessExists($pID)
 		Sleep(500)
 	WEnd
@@ -378,180 +363,6 @@ Func ConvertDirFileMultiLine($strMultiLine)
 		IceLogMsg("¹²ºÄÊ±("&int($costTime/1000)&"Ãë) "&"×ª»»" & $g_totalFileCount & "¸öÎÄ¼şÍê±Ï! È«²¿³É¹¦"&@CRLF)
 	EndIf
 EndFunc  
-
-Func StringStripWSChn($str)
-	While 1 
-		;_DebugOut($str)
-		Local $newStr = StringStripWS($str, 3)
-		Local $righChr = StringRight($newStr,1)
-		Local $leftChr = StringLeft($newStr,1)
-		;_DebugOut($newStr)
-		If $newStr==$str and $righChr<>"¡¡" and $leftChr<>"¡¡" Then
-			return $newStr
-		Else
-			If $righChr=="¡¡" Then
-				;_DebugOut($newStr)
-				$str = StringTrimRight($newStr, 1)
-			EndIf	
-			If $leftChr=="¡¡" Then
-				;_DebugOut($newStr)
-				$str = StringTrimLeft($newStr, 1)
-			EndIf
-			If $righChr<>"¡¡" and $leftChr<>"¡¡" Then
-				$str = $newStr
-			EndIf
-		EndIf
-	WEnd	
-EndFunc
-
-
-Func ConvertTxt2MarkDown($oldTxt, $newTxt, $oldTxtTitle)
-	Local $inFp = FileOpen($oldTxt, 0)
-	Local $outFp = FileOpen($newTxt, 2)
-	Local $ChapterNo = 0
-	Local $ChapterCharacterCount = $g_chptMinChrcters+1 
-	If $g_bInsertTOC==True Then
-		FileWriteLine($outFp, "///Table of Contents///"&@CRLF)
-	EndIf
-	While 1
-		Local $line = FileReadLine($inFp)
-		If @error == -1 Then
-			ExitLoop
-		EndIf
-		$ChapterCharacterCount+=StringLen($line)
-
-		
-		Local $bTitle=0
-		If $g_bInsertTOC==True Then			
-			Local $strFindArr = StringRegExp($line, $g_titleWord, 1)
-			if UBound($strFindArr)<>0 Then
-				$bTitle = 1
-				
-				;ÕÂ½ÚÃûÖ®Ç°²»Ó¦¸ÃÔÙÓĞºÜ¶àºº×Ö... Ôİ¶¨Îª£±£°¸ö
-				Local $titlePosition = StringInStr($line, $strFindArr[0])
-				Local $strLinePreTitle = StringLeft($line, $titlePosition)
-				$strLinePreTitle = StringReplace($strLinePreTitle, "¡¡", " ")
-				$strLinePreTitle = StringStripWS($strLinePreTitle, 1)
-				If StringLen($strLinePreTitle)>10 Then
-					$bTitle =0
-				EndIf
-				
-				If $g_bEngilsh==False Then
-					;Èç¹ûÃ»ÓĞÕÂ£¬¡¡Ò²Ã»ÓĞµÚ
-					If StringInStr($strFindArr[0], "µÚ")==0 and  StringInStr($strFindArr[0], "ÕÂ")==0 Then
-						$bTitle=0
-					EndIf				
-					
-					;È¥µô²»¿ÉÄÜ³öÏÖµÄºº×ÖµÄÇé¿ö Èç»ØºÏµÈ
-					If StringRegExp($strFindArr[0], $g_titleWordInvallid)==1 Then
-						$bTitle=0
-					EndIf
-					
-					;±£Ö¤titleÖ®Ç°Ö»ÓĞÖ¸¶¨µÄ×Ö·û ÈçÕıÎÄµÚ£²£²ÕÂ
-					Local $firstStr = StringLeft($strFindArr[0], 1)
-					Local $validPreStr = "["&StringTrimRight(StringTrimLeft($g_titleWordPre, 1),1) & $oldTxtTitle&"]"
-					
-					;_DebugOut($firstStr)
-
-					If StringIsASCII($firstStr)==0 and StringRegExp($firstStr, $validPreStr)==0 Then	
-						Local $binaryStr = Binary($firstStr)
-						If $binaryStr>0xA9 Then ;chinese charactor
-							$bTitle=0
-						EndIf
-					EndIf
-				EndIf				
-			EndIf
-			
-			if $bTitle<>0 Then 
-				Local $titleLegth = StringLen($line)
-				
-				;Detect origin TOC in txt
-				if($titleLegth<$g_titleMaxStrLen) And $ChapterCharacterCount<$g_titleMaxStrLen*2 Then
-					$ChapterCharacterCount = 0
-				EndIf			
-				if($titleLegth<$g_titleMaxStrLen) and ($ChapterCharacterCount>$g_chptMinChrcters) Then 
-					$ChapterNo+=1
-					$line = StringReplace($line, "#", " ")
-					If $g_bEngilsh==False Then
-						$line = StringReplace($line, "  ", "¡¡")
-						$line = StringReplace($line, " ", "¡¡")
-					EndIf					
-					$line&=@CRLF&"------------------------------"&@CRLF
-					$ChapterCharacterCount = 0
-				EndIf
-			EndIf
-		EndIf
-		if $ChapterCharacterCount>$g_chptMaxChrcters Then 
-			$ChapterNo+=1
-			$line&=@CRLF&"µÚ"&$ChapterNo&"ÕÂ"&@CRLF&"-------------"&@CRLF
-			$ChapterCharacterCount = 0
-			$bTitle = 1
-		EndIf
-		
-		If $bTitle==0 Then
-			if $g_bFmtIndent==True then 
-				;Remove and place Chinese Space
-				$line = StringStripWSChn($line)
-				If $g_bFmtNewLine==True Then
-					if StringIsSpace($line) or $line=="" then ContinueLoop
-				EndIf			
-				While StringLeft($line, 2)<>"¡¡¡¡"
-					$line = "¡¡"&$line
-				WEnd
-			EndIf
-			If $g_bEngilsh==False Then 
-				$line = StringReplace($line, "  ", "¡¡")
-				$line = StringReplace($line, " ", "¡¡")
-				$line = StringReplace($line, "-", "£­")
-			EndIf
-			$line = "    "&$line	
-		EndIf
-		
-		If $g_bInsertTOC==True and $ChapterNo==0 and $bTitle==0 Then
-			$ChapterNo=1
-			If $g_bEngilsh==False Then
-				FileWriteLine($outFp, "ÕıÎÄ¿ªÊ¼"&@CRLF&"--------"&@CRLF)	
-			Else
-				FileWriteLine($outFp, "Content Begin"&@CRLF&"--------"&@CRLF)
-			EndIf				
-		EndIf	
-		
-		FileWriteLine($outFp, $line)
-	WEnd
-	FileClose($inFp)
-	FileClose($outFp)
-EndFunc  
-
-
- Func ConvertTxtMergeBlock($oldTxt, $newTxt)
-	Local $inFp = FileOpen($oldTxt, 0)
-	Local $outFp = FileOpen($newTxt, 2)
-	Local $prelineIsCR = False
-	Local $paragraph=""
-	While 1
-		Local $line = FileReadLine($inFp)
-		If @error == -1 Then
-			If $paragraph<>"" Then FileWriteLine($outFp,$paragraph)
-			ExitLoop
-		EndIf
-		
-		
-		Local $tempLine = StringReplace($line, "¡¡", " ")
-		Local $lineisCR = (StringIsSpace($tempLine) or $line=="" )
-		if(StringLeft($tempLine,1)==" ") Then
-			FileWriteLine($outFp,$paragraph)
-			$paragraph=$line		
-		Else			
-			$paragraph&=$line
-			If $lineisCR==True or StringLen($paragraph)>$g_maxParagraphSize  Then
-				FileWriteLine($outFp,$paragraph)
-				$paragraph=""
-			EndIf		
-		EndIf		
-	WEnd
-	FileClose($inFp)
-	FileClose($outFp)
-EndFunc
 
 Func GetBookList()
 

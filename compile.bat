@@ -1,2 +1,2 @@
-ruby ocrasa.rb --dll temp/kindlegen.exe upig2prc.rb
+ruby ocrasa.rb --dll temp/kindlegen.exe upigcmd.rb
 pause

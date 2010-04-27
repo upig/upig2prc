@@ -1,2 +1,2 @@
-ruby ocrasa.rb upig2prc.rb
+ruby ocrasa.rb upigcmd.rb
 pause
