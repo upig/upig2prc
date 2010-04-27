@@ -45,12 +45,12 @@ $Label3 = GUICtrlCreateLabel("总进度", 8, 8, 40, 17)
 ;$Label7 = GUICtrlCreateLabel("TXT2LRF参数：", 180, 37, 87, 17)
 ;$ctlCheckUseOutputPath = GUICtrlCreateCheckbox("输出路径：", 180, 70, 81, 17)
 ;$Label2 = GUICtrlCreateLabel("编码格式：", 6, 37, 64, 17)
-$ctlBtnTest = GUICtrlCreateButton("ctlBtnTest", 432, 16, 35, 17, 0)
+;$ctlBtnTest = GUICtrlCreateButton("ctlBtnTest", 432, 16, 35, 17, 0)
 ;$ctlCheckAutoParagraph = GUICtrlCreateCheckbox("智能分段", 534, 34, 89, 17)
 $Label4 = GUICtrlCreateLabel("子进度", 440, 8, 40, 17)
 $ctlBtnVist17memo = GUICtrlCreateButton("去和书友交流", 438, 33, 107, 25, 0)
 $ctlBtnHelp = GUICtrlCreateButton("帮助", 552, 33, 67, 25, 0)
-$Label8 = GUICtrlCreateLabel("请将txt文件或文件夹拖入到下面的文本框中。upig出品(31531640@qq.com)", 8,36, 472, 17)
+$Label8 = GUICtrlCreateLabel("请将txt文件或文件夹拖入到下面的文本框中。upig出品(31531640@qq.com)", 8,36, 400, 17)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
@@ -112,7 +112,7 @@ GUICtrlSetState($ctlEditFileInput, $GUI_DROPACCEPTED)
 GUICtrlSetData($ctlEditOutput, $helpStr)
 GUICtrlSetData($ctlEditFileInput, "")
 GUICtrlSetData($ctlEditHelp, $helpStr)
-GUICtrlSetState($ctlBtnTest, $GUI_HIDE)
+;GUICtrlSetState($ctlBtnTest, $GUI_HIDE)
 
 If $g_bEngilsh==True Then 
 ;	GUICtrlSetState($ctlCheckEnglishOnly, $GUI_CHECKED)
@@ -210,9 +210,7 @@ While 1
 			IniWrite($g_inifileName, $g_iniSection, "$g_maxParagraphSize", $g_maxParagraphSize )		
 			IniWrite($g_inifileName, $g_iniSection, "$g_reg", $g_reg )
 			ExitLoop
-		case $ctlBtnTest 
-			AutoTest()
-
+		
 		case $ctlBtnVist17memo
 			ShellExecute ("http://17memo.com/forums/forumdisplay.php?fid=2")
 		case  $ctlBtnHelp
