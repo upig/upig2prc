@@ -21,9 +21,14 @@ optparse = OptionParser.new do|opts|
   upig2prc d:/books #will convert all txt in d:/books
 EOF
 
-  options[:n] = false
-  opts.on( '-n', '', '不要遍历子文件夹') do
-    options[:one] = true
+  options[:r] = false
+  opts.on( '-r', '', '遍历子文件夹') do
+    options[:r] = true
+  end
+
+  options[:f] = false
+  opts.on( '-f', '', '覆盖已经生成过的同名prc') do
+    options[:f] = true
   end
 
   opts.on( '-h', '', '帮助' ) do
