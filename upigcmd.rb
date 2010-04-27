@@ -73,10 +73,11 @@ html_footer = html_footer.to_utf8
 File.open(options[:temp], 'w'){|temp_file|
   File.open(keyword, 'r'){|f|
     src_str = f.read
-    encode_det = CharDet.detect(src_str)
+    encode_det = CharDet.detect(src_str[0..100])
     encoding = encode_det['encoding'].upcase
     confidence = encode_det['confidence']
     $stderr.puts '编码不能正确识别' if confidence <0.1
+    puts 'begin'
 
     temp_file.print html_header
 
@@ -88,6 +89,8 @@ File.open(options[:temp], 'w'){|temp_file|
     }
 
     temp_file.print html_footer
+
+    puts 'end'
   }
 }
 
