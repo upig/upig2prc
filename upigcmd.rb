@@ -64,7 +64,11 @@ keyword = ARGV.join(' ')
 options[:output] = File.basename(keyword, '.txt')+'.prc' if options[:output] == ''
 options[:temp] = File.basename(keyword, '.txt')+'.html' if options[:temp] == ''
 
-$stderr.puts optparse if keyword.strip==''
+if keyword.strip==''
+  $stderr.puts optparse
+  `pause`
+  exit
+end
 
 HTML_ESCAPE = { '&' => '&amp;',  '>' => '&gt;',   '<' => '&lt;', '"' => '&quot;',  ' '=>'&nbsp;' }
 
@@ -108,17 +112,15 @@ File.open(options[:temp], 'w'){|temp_file|
   }
 }
 
-if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
-  $stderr.puts 'txt目录下不能有xiang.css'
-  exit 
+no_css_in_dir = true
+if File.exist?('xiang.css')
+  no_css_in_dir = false
 end
 
-File.copy(options[:css], 'xiang.css')
+File.copy(options[:css], 'xiang.css') if no_css_in_dir
 result = `temp/kindlegen.exe "#{options[:temp]}"`
 $stderr.puts result if result.include?('Error')
 
 File.delete(options[:temp])
-if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
-  File.delete('xiang.css')
-end
+File.delete('xiang.css') if no_css_in_dir
 
