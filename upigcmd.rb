@@ -7,6 +7,9 @@ require 'iconv'
 require 'rchardet'
 require 'ftools'
 
+exit if Object.const_defined?(:Ocra)
+
+
 class String  
   def to_gbk(src_encoding='UTF-8')
     return self if src_encoding.upcase.strip=='GBK'
@@ -18,8 +21,7 @@ class String
   end  
 end 
 
-
-exit if Object.const_defined?(:Ocra)
+script_path = File.expand_path(File.dirname(__FILE__))
 
 options = {}
 
@@ -34,6 +36,11 @@ optparse = OptionParser.new do|opts|
 使用方法:
   upig2prc [options] file_name"
 EOF
+
+  options[:css] = File.join(script_path, '../bin/temp/xiang.css')
+  opts.on( '-c', '--css css_name', '指定css文件名') do |f|
+    options[:css] = f 
+  end
 
   options[:temp] = '' 
   opts.on( '-t', '--temp output_name', '指定临时文件名') do |f|
@@ -66,7 +73,6 @@ def h(s)
 end
 
 
-script_path = File.expand_path(File.dirname(__FILE__))
 html_header =<<"EOF"
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link REL="stylesheet" TYPE="text/css" HREF="xiang.css"></head><body topmargin="0" leftmargin="0" bottommargin="0" rightmargin="0">
 EOF
@@ -107,12 +113,11 @@ if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
   exit 
 end
 
-`pause`
-File.copy((File.join(script_path, '../bin/temp/xiang.css')), 'xiang.css')
+File.copy(options[:css], 'xiang.css')
 result = `temp/kindlegen.exe "#{options[:temp]}"`
 $stderr.puts result if result.include?('Error')
-File.delete(options[:temp])
 
+File.delete(options[:temp])
 if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
   File.delete('xiang.css')
 end

@@ -23,7 +23,7 @@
 
 ;$dlgMain = GUICreate("upig2prc (v8.10.30.19) 将Txt批量转换到Lrf (sony prs 505)", 631, 443, 193, 115, -1, 0x00000018)
 #Region ### START Koda GUI section ### Form=d:\3_appdata\microsoft\desktop\upig2prc\新版\ui.kxf
-$dlgMain = GUICreate("upig2prc (10.4.27.1) 将Txt批量转换到prc(Kindle电子书)", 640, 415, 193, 115, -1, 0x00000018)
+$dlgMain = GUICreate("upig2prc (10.4.27.2) 将Txt批量转换到prc(Kindle电子书)", 640, 415, 193, 115, -1, 0x00000018)
 $ctlEditOutput = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
 $ctlEditFileInput = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
