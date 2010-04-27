@@ -34,12 +34,12 @@ optparse = OptionParser.new do|opts|
   upig2prc [options] file_name"
 EOF
 
-  options[:temp] = 'upig_temp.tmp' 
+  options[:temp] = 'upig2prc_temp.html' 
   opts.on( '-t', '--temp output_name', '指定临时文件名') do |f|
     options[:temp] = f 
   end
 
-  options[:output] = '' 
+  options[:output] = ''
   opts.on( '-o', '--output output_name', '指定输出文件名') do |f|
     options[:output] = f 
   end
@@ -53,31 +53,43 @@ end
 optparse.parse!
 
 keyword = ARGV.join(' ') 
+options[:output] = File.basename(keyword, '.txt')+'.prc' if options[:output] == ''
 
 $stderr.puts optparse if keyword.strip==''
 
 
-#$stderr.puts "options"
+html_header =<<'EOF'
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link REL="stylesheet" TYPE="text/css" HREF="xiang.css"></head><body topmargin="0" leftmargin="0" bottommargin="0" rightmargin="0">
+EOF
+html_footer =<<'EOF'
+</body></html>
+EOF
 
+html_header = html_header.to_utf8
+html_footer = html_footer.to_utf8
 
-
-    #Iconv.iconv("UTF-8//IGNORE","GBK//IGNORE",self).to_s  
-
-#convert txt to html
-#f.write(optparse.to_s)
 File.open(options[:temp], 'w'){|temp_file|
-  File.open(options[:output], 'w'){|out_file|
-    File.open(keyword, 'r'){|f|
-      src_str = f.read
-      #(confidence, encoding)= CharDet.detect(src_str)
-      encode_det = CharDet.detect(src_str)
-      encoding = encode_det['encoding'].upcase
-      confidence = encode_det['confidence']
-      $stderr.puts '编码不能正确识别' if confidence <0.1
-      temp_file.print src_str.to_utf8(encoding)
+  File.open(keyword, 'r'){|f|
+    src_str = f.read
+    encode_det = CharDet.detect(src_str)
+    encoding = encode_det['encoding'].upcase
+    confidence = encode_det['confidence']
+    $stderr.puts '编码不能正确识别' if confidence <0.1
+
+    temp_file.print html_header
+
+    src_str_utf8 = src_str.to_utf8(encoding)
+    src_str_utf8.each_line {|line|
+      line.gsub!('　'.to_utf8, '  '.to_utf8)
+      line.lstrip!
+      temp_file.print '<p>'+line+'</p>'
     }
+
+    temp_file.print html_footer
   }
 }
+
+`temp/kindlegen.exe #{options[:temp]} -o #{options[:output]}`
 
 #$filetypes='*.{txt}'
 
