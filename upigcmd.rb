@@ -107,7 +107,8 @@ if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
   exit 
 end
 
-File.copy(File.join(script_path, 'xiang.css'), 'xiang.css')
+`pause`
+File.copy((File.join(script_path, '../bin/temp/xiang.css')), 'xiang.css')
 result = `temp/kindlegen.exe "#{options[:temp]}"`
 $stderr.puts result if result.include?('Error')
 File.delete(options[:temp])
@@ -115,5 +116,4 @@ File.delete(options[:temp])
 if File.exist?('xiang.css') && !File.exist?('upig2prc.exe')
   File.delete('xiang.css')
 end
-
 
