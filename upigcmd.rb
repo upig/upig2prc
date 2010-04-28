@@ -102,6 +102,7 @@ File.open(options[:temp], 'w'){|temp_file|
     src_str_utf8.each_line {|line|
       line.gsub!('¡¡'.to_utf8, '  '.to_utf8)
       line.lstrip!
+      next if line=~/^\s*$/
       #todo escape html code
       temp_file.print '<p>'+h(line)+'</p>'
     }
