@@ -63,6 +63,7 @@ optparse.parse!
 keyword = ARGV.join(' ') 
 options[:output] = File.basename(keyword, '.txt')+'.prc' if options[:output] == ''
 options[:temp] = File.basename(keyword, '.txt')+'.html' if options[:temp] == ''
+output_name = File.basename(options[:temp], '.html')+'.prc'
 
 if keyword.strip==''
   $stderr.puts optparse
@@ -88,12 +89,15 @@ html_footer = html_footer.to_utf8
 
 keyword.strip!
 File.open(options[:temp], 'w'){|temp_file|
-  File.open(keyword, 'r'){|f|
+  File.open(keyword, 'rb'){|f|
     src_str = f.read
     encode_det = CharDet.detect(src_str[0..100])
     encoding = encode_det['encoding'].upcase
     confidence = encode_det['confidence']
     $stderr.puts '编码不能正确识别' if confidence <0.1
+    puts encoding
+    puts confidence
+    puts src_str.jlength
     puts 'begin'
 
     temp_file.print html_header
@@ -103,7 +107,6 @@ File.open(options[:temp], 'w'){|temp_file|
       line.gsub!('　'.to_utf8, '  '.to_utf8)
       line.lstrip!
       next if line=~/^\s*$/
-      #todo escape html code
       temp_file.print '<p>'+h(line)+'</p>'
     }
 
@@ -119,7 +122,7 @@ if File.exist?('xiang.css')
 end
 
 File.copy(options[:css], 'xiang.css') if no_css_in_dir
-result = `temp/kindlegen.exe "#{options[:temp]}"`
+result = `temp/kindlegen.exe -o #{output_name} "#{options[:temp]}"`
 $stderr.puts result if result.include?('Error')
 
 File.delete(options[:temp])
