@@ -262,7 +262,7 @@ Func ConvertFile($inputFileName)
 	
 	
 	
-	Local $cvtFileName = 	$inputFileName
+	Local $cvtFileName = 	StringReplace($inputFileName, "'", "\'")
 
  ;   Run it! upigcmd.exe
 ;	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $encodingParm & $publisher & $debugParam & $outputParam & GUICtrlRead($ctlEditParamTxt2lrf) & " """ & $cvtFileName & """ " &$debugParam2   
