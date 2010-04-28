@@ -9,7 +9,6 @@ require 'ftools'
 
 exit if Object.const_defined?(:Ocra)
 
-
 class String  
   def to_gbk(src_encoding='UTF-8')
     return self if src_encoding.upcase.strip=='GBK'
@@ -58,9 +57,12 @@ EOF
   end
 end
 
+
 optparse.parse!
 
+
 keyword = ARGV.join(' ') 
+puts keyword
 options[:output] = File.basename(keyword, '.txt')+'.prc' if options[:output] == ''
 options[:temp] = File.basename(keyword, '.txt')+'.html' if options[:temp] == ''
 output_name = File.basename(options[:temp], '.html')+'.prc'
@@ -95,9 +97,6 @@ File.open(options[:temp], 'w'){|temp_file|
     encoding = encode_det['encoding'].upcase
     confidence = encode_det['confidence']
     $stderr.puts '编码不能正确识别' if confidence <0.1
-    puts encoding
-    puts confidence
-    puts src_str.jlength
     puts 'begin'
 
     temp_file.print html_header

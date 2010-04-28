@@ -22,12 +22,12 @@
 #include <WindowsConstants.au3>
 
 #Region ### START Koda GUI section ### Form=d:\3_appdata\microsoft\desktop\upig2prc\新版\ui.kxf
-$dlgMain = GUICreate("upig2prc (10.4.28.3) 将Txt批量转换到prc(Kindle电子书)", 640, 415, 193, 115, -1, 0x00000018)
-$ctlEditOutput = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
+$dlgMain = GUICreate("upig2prc (10.4.27.1) 将Txt批量转换到prc(Kindle电子书)", 640, 465, 193, 115, -1, 0x00000018)
+$ctlEditOutput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
-$ctlEditFileInput = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
+$ctlEditFileInput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
-$ctlEditHelp = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
+$ctlEditHelp = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
 $ctlProgressTotal = GUICtrlCreateProgress(56, 6, 358, 16)
 $ctlProgressInd = GUICtrlCreateProgress(488, 6, 134, 16)
@@ -38,17 +38,17 @@ $ctlProgressInd = GUICtrlCreateProgress(488, 6, 134, 16)
 ;$ctlEditPrefix = GUICtrlCreateInput("", 70, 66, 79, 21)
 $Label3 = GUICtrlCreateLabel("总进度", 8, 8, 40, 17)
 ;$Label5 = GUICtrlCreateLabel("前缀：", 30, 68, 40, 17)
-;$ctlEditPathOutput = GUICtrlCreateInput("", 267, 67, 151, 21)
+$ctlEditPathOutput = GUICtrlCreateInput("", 267, 67, 151, 21)
 ;$Label1 = GUICtrlCreateLabel("", 237, 64, 4, 4)
 ;$Label6 = GUICtrlCreateLabel("", 272, 106, 4, 4)
 ;$Label7 = GUICtrlCreateLabel("TXT2LRF参数：", 180, 37, 87, 17)
-;$ctlCheckUseOutputPath = GUICtrlCreateCheckbox("输出路径：", 180, 70, 81, 17)
+$ctlCheckUseOutputPath = GUICtrlCreateCheckbox("输出路径：", 180, 70, 81, 17)
 ;$Label2 = GUICtrlCreateLabel("编码格式：", 6, 37, 64, 17)
 ;$ctlBtnTest = GUICtrlCreateButton("ctlBtnTest", 432, 16, 35, 17, 0)
 ;$ctlCheckAutoParagraph = GUICtrlCreateCheckbox("智能分段", 534, 34, 89, 17)
 $Label4 = GUICtrlCreateLabel("子进度", 440, 8, 40, 17)
-$ctlBtnVist17memo = GUICtrlCreateButton("去和书友交流", 438, 33, 107, 25, 0)
-$ctlBtnHelp = GUICtrlCreateButton("帮助", 552, 33, 67, 25, 0)
+$ctlBtnVist17memo = GUICtrlCreateButton("去和书友交流", 438, 64, 107, 25, 0)
+$ctlBtnHelp = GUICtrlCreateButton("帮助", 552, 64, 67, 25, 0)
 $Label8 = GUICtrlCreateLabel("请将txt文件或文件夹拖入到下面的文本框中。upig出品(31531640@qq.com)", 8,36, 400, 17)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
@@ -80,7 +80,7 @@ Global $g_inifileName = @ScriptDir & "\upig2prc.ini"
 Global $g_iniSection = "Setting20"
 ;GUICtrlSetData($ctlEditPrefix,			IniRead($g_inifileName, $g_iniSection, "$ctlEditPrefix", 			"e."))
 ;GUICtrlSetData($ctlComboEncoding, 	" ",IniRead($g_inifileName, $g_iniSection, "$ctlComboEncoding", 		"普通编码"))
-;GUICtrlSetData($ctlEditPathOutput, 		IniRead($g_inifileName, $g_iniSection, "$ctlEditPathOutput", 		""))
+GUICtrlSetData($ctlEditPathOutput, 		IniRead($g_inifileName, $g_iniSection, "$ctlEditPathOutput", 		""))
 ;GUICtrlSetData($ctlEditParamTxt2lrf, 	IniRead($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", 		"--author=upig2prc --left-margin=0 --right-margin=0 --top-margin=0 --bottom-margin=0 --override-css=""code {font-family: 'Swis721 BT'}"""))
 Global $g_bEngilsh = 					IniRead($g_inifileName, $g_iniSection, "$g_bEngilsh", 			False)
 Global $g_bUseOutputPath= 				IniRead($g_inifileName, $g_iniSection, "$g_bUseOutputPath", 	False)
@@ -128,11 +128,11 @@ EndIf
 
 
 If $g_bUseOutputPath==True Then 
-;	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_CHECKED)
-;	GUICtrlSetState($ctlEditPathOutput, $GUI_ENABLE)
+	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_CHECKED)
+	GUICtrlSetState($ctlEditPathOutput, $GUI_ENABLE)
 Else
-;	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_UNCHECKED)
-;	GUICtrlSetState($ctlEditPathOutput, $GUI_DISABLE)
+	GUICtrlSetState($ctlCheckUseOutputPath, $GUI_UNCHECKED)
+	GUICtrlSetState($ctlEditPathOutput, $GUI_DISABLE)
 EndIf
 
 ;DirCreate($g_tempFileDir)
@@ -190,7 +190,7 @@ While 1
 ;			IniWrite($g_inifileName, $g_iniSection, "$ctlEditPrefix", GUICtrlRead($ctlEditPrefix))
 ;			IniWrite($g_inifileName, $g_iniSection, "$ctlComboEncoding", GUICtrlRead($ctlComboEncoding))
 ;			IniWrite($g_inifileName, $g_iniSection, "$ctlEditParamTxt2lrf", GUICtrlRead($ctlEditParamTxt2lrf))
-;			IniWrite($g_inifileName, $g_iniSection, "$ctlEditPathOutput", GUICtrlRead($ctlEditPathOutput))
+			IniWrite($g_inifileName, $g_iniSection, "$ctlEditPathOutput", GUICtrlRead($ctlEditPathOutput))
 			IniWrite($g_inifileName, $g_iniSection, "$g_ToolName", $g_ToolName )
 			IniWrite($g_inifileName, $g_iniSection, "$g_bEngilsh", $g_bEngilsh )
 			IniWrite($g_inifileName, $g_iniSection, "$g_bUseOutputPath", $g_bUseOutputPath )
@@ -209,7 +209,13 @@ While 1
 			IniWrite($g_inifileName, $g_iniSection, "$g_maxParagraphSize", $g_maxParagraphSize )		
 			IniWrite($g_inifileName, $g_iniSection, "$g_reg", $g_reg )
 			ExitLoop
-		
+		case $ctlCheckUseOutputPath
+			$g_bUseOutputPath = ($g_bUseOutputPath==False)
+			if $g_bUseOutputPath==True Then
+				GUICtrlSetState($ctlEditPathOutput, $GUI_ENABLE)
+			Else
+				GUICtrlSetState($ctlEditPathOutput, $GUI_DISABLE)	
+			EndIf		
 		case $ctlBtnVist17memo
 			ShellExecute ("http://17memo.com/forums/forumdisplay.php?fid=2")
 		case  $ctlBtnHelp
@@ -253,9 +259,9 @@ Func ConvertFile($inputFileName)
 	
 	Local $workPath = $szDrive&$szDir
 
-;	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
-;	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
-;	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
+	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
+	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
+	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
 	If $inputFileExt == ".prc" Or $inputFileExt == ".exe" Then Return
 	$g_totalFileCount += 1
 	IceLogMsg("["&$g_totalFileCount&"]  正在转换中，请稍候: " & $inputFileTitle & $inputFileExt)
@@ -263,13 +269,15 @@ Func ConvertFile($inputFileName)
 	
 	
 	Local $cvtFileName = 	$inputFileName
+	Local $outputParam=""
+	If $pathOutPut<>"" Then $outputParam = " --output=""" & $pathOutPut & $inputFileTitle & ".prc"" "
 
  ;   Run it! upigcmd.exe
 ;	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $encodingParm & $publisher & $debugParam & $outputParam & GUICtrlRead($ctlEditParamTxt2lrf) & " """ & $cvtFileName & """ " &$debugParam2   
 ;	ConsoleWrite($cmd)
 	Local $script_path = FileGetShortName(@ScriptDir)
 
-	Local $cmd = @ComSpec & " /c """ & $script_path& '\'&$g_ToolName &" "" "& " """ & $cvtFileName & """ " 
+	Local $cmd = @ComSpec & " /c """"" & $script_path& '\'&$g_ToolName &""" "& $outputParam & " """ & $cvtFileName & """""" 
 	
 	ConsoleWrite($cmd)
 	Local $pID = Run($cmd, $workPath, @SW_HIDE, $STDERR_CHILD+$STDOUT_CHILD)
