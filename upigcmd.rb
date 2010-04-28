@@ -43,12 +43,12 @@ EOF
   end
 
   options[:temp] = '' 
-  opts.on( '-t', '--temp output_name', '指定临时文件名') do |f|
+  opts.on( '-t', '--temp temp_name', '指定临时文件名') do |f|
     options[:temp] = f 
   end
 
   options[:output] = ''
-  opts.on( '-o', '--output output_name', '指定输出文件名') do |f|
+  opts.on( '-o', '--output options[:output]', '指定输出文件名') do |f|
     options[:output] = f 
   end
 
@@ -61,9 +61,17 @@ end
 optparse.parse!
 
 keyword = ARGV.join(' ') 
-options[:output] = File.basename(keyword, '.txt')+'.prc' if options[:output] == ''
-options[:temp] = File.basename(keyword, '.txt')+'.html' if options[:temp] == ''
-output_name = File.basename(options[:temp], '.html')+'.prc'
+file_title = File.basename(keyword, File.extname(keyword))
+options[:output] = file_title+'.prc' if options[:output].strip == ''
+options[:temp] = file_title +'.html' if options[:temp] == ''
+
+if File.extname(keyword)=~/(html|epub|htm)/i
+  result = `temp/kindlegen.exe -o #{options[:output]} #{keyword}`
+  $stderr.puts result if result.include?('Error')
+  exit
+end
+
+exit unless File.extname(keyword)=~/txt/i
 
 if keyword.strip==''
   $stderr.puts optparse
@@ -122,7 +130,7 @@ if File.exist?('xiang.css')
 end
 
 File.copy(options[:css], 'xiang.css') if no_css_in_dir
-result = `temp/kindlegen.exe -o #{output_name} "#{options[:temp]}"`
+result = `temp/kindlegen.exe -o #{options[:output]} "#{options[:temp]}"`
 $stderr.puts result if result.include?('Error')
 
 File.delete(options[:temp])

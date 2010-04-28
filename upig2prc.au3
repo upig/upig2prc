@@ -256,7 +256,7 @@ Func ConvertFile($inputFileName)
 ;	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
 ;	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
 ;	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
-	If $inputFileExt == ".prc" Or $inputFileExt == ".exe" Then Return
+	If $inputFileExt == ".prc" Or $inputFileExt == ".exe" Or $inputFileExt == ".mobi" Then Return
 	$g_totalFileCount += 1
 	IceLogMsg("["&$g_totalFileCount&"]  正在转换中，请稍候: " & $inputFileTitle & $inputFileExt)
 	
