@@ -47,7 +47,7 @@ EOF
   end
 
   options[:output] = ''
-  opts.on( '-o', '--output output_name', '指定输出文件名') do |f|
+  opts.on( '-o', '--output output_name', '指定输出文件名(只用到了路径)') do |f|
     options[:output] = f 
   end
 
@@ -63,12 +63,13 @@ optparse.parse!
 
 keyword = ARGV.join(' ') 
 file_title = File.basename(keyword, File.extname(keyword))
-options[:output] = file_title+'.prc' if options[:output].strip == ''
+output_path = File.dirname(options[:output])  
+options[:output] = file_title+'.prc'
 options[:temp] = file_title +'.html' if options[:temp] == ''
 
 if File.extname(keyword)=~/(html|epub|htm)/i
   result = `temp/kindlegen.exe -o #{options[:output]} #{keyword}`
-  $stderr.puts result if result.include?('Error')
+  $stderr.puts result if result.include?('Error') or !result.include?('Saving MOBI file')
   exit
 end
 
@@ -129,8 +130,9 @@ end
 
 File.copy(options[:css], 'xiang.css') if no_css_in_dir
 result = `temp/kindlegen.exe -o #{options[:output]} "#{options[:temp]}"`
-$stderr.puts result if result.include?('Error')
+$stderr.puts result if result.include?('Error') or !result.include?('Saving MOBI file')
 
 File.delete(options[:temp])
 File.delete('xiang.css') if no_css_in_dir
+
 
