@@ -47,7 +47,7 @@ EOF
   end
 
   options[:output] = ''
-  opts.on( '-o', '--output options[:output]', '指定输出文件名') do |f|
+  opts.on( '-o', '--output output_name', '指定输出文件名') do |f|
     options[:output] = f 
   end
 
@@ -62,12 +62,6 @@ optparse.parse!
 
 
 keyword = ARGV.join(' ') 
-<<<<<<< HEAD
-puts keyword
-options[:output] = File.basename(keyword, '.txt')+'.prc' if options[:output] == ''
-options[:temp] = File.basename(keyword, '.txt')+'.html' if options[:temp] == ''
-output_name = File.basename(options[:temp], '.html')+'.prc'
-=======
 file_title = File.basename(keyword, File.extname(keyword))
 options[:output] = file_title+'.prc' if options[:output].strip == ''
 options[:temp] = file_title +'.html' if options[:temp] == ''
@@ -79,7 +73,6 @@ if File.extname(keyword)=~/(html|epub|htm)/i
 end
 
 exit unless File.extname(keyword)=~/txt/i
->>>>>>> 5687949cc61bf751ed702ae90f8554b32e70de2e
 
 if keyword.strip==''
   $stderr.puts optparse

@@ -22,13 +22,8 @@
 #include <WindowsConstants.au3>
 
 #Region ### START Koda GUI section ### Form=d:\3_appdata\microsoft\desktop\upig2prc\新版\ui.kxf
-<<<<<<< HEAD
-$dlgMain = GUICreate("upig2prc (10.4.27.1) 将Txt批量转换到prc(Kindle电子书)", 640, 465, 193, 115, -1, 0x00000018)
+$dlgMain = GUICreate("upig2prc (10.4.28.5) 将Txt批量转换到prc(Kindle电子书)", 640, 465, 193, 115, -1, 0x00000018)
 $ctlEditOutput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
-=======
-$dlgMain = GUICreate("upig2prc (10.4.28.5) 将Txt批量转换到prc(Kindle电子书)", 640, 415, 193, 115, -1, 0x00000018)
-$ctlEditOutput = GUICtrlCreateEdit("", 8, 64, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
->>>>>>> 5687949cc61bf751ed702ae90f8554b32e70de2e
 GUICtrlSetData(-1, "")
 $ctlEditFileInput = GUICtrlCreateEdit("", 8, 116, 617, 337, BitOR($ES_AUTOVSCROLL,$ES_AUTOHSCROLL,$ES_READONLY,$ES_WANTRETURN,$WS_HSCROLL,$WS_VSCROLL))
 GUICtrlSetData(-1, "")
@@ -264,29 +259,18 @@ Func ConvertFile($inputFileName)
 	
 	Local $workPath = $szDrive&$szDir
 
-<<<<<<< HEAD
 	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
 	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
 	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
-	If $inputFileExt == ".prc" Or $inputFileExt == ".exe" Then Return
-=======
-;	Local $pathOutPut = GUICtrlRead($ctlEditPathOutput)&"\"
-;	If $g_bUseOutputPath==False Then $pathOutPut=$workPath
-;	If StringIsSpace(GUICtrlRead($ctlEditPathOutput)) Then $pathOutPut=""
 	If $inputFileExt == ".prc" Or $inputFileExt == ".exe" Or $inputFileExt == ".mobi" Then Return
->>>>>>> 5687949cc61bf751ed702ae90f8554b32e70de2e
 	$g_totalFileCount += 1
 	IceLogMsg("["&$g_totalFileCount&"]  正在转换中，请稍候: " & $inputFileTitle & $inputFileExt)
 	
 	
 	
-<<<<<<< HEAD
 	Local $cvtFileName = 	$inputFileName
 	Local $outputParam=""
 	If $pathOutPut<>"" Then $outputParam = " --output=""" & $pathOutPut & $inputFileTitle & ".prc"" "
-=======
-	Local $cvtFileName = 	StringReplace($inputFileName, "'", "\'")
->>>>>>> 5687949cc61bf751ed702ae90f8554b32e70de2e
 
  ;   Run it! upigcmd.exe
 ;	Local $cmd = @ComSpec & " /c " & $g_ToolName &" "& $encodingParm & $publisher & $debugParam & $outputParam & GUICtrlRead($ctlEditParamTxt2lrf) & " """ & $cvtFileName & """ " &$debugParam2   
