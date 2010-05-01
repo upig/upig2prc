@@ -16,6 +16,7 @@ class String
   end  
   def to_utf8(src_encoding='GBK')
     return self if src_encoding.upcase.strip=='UTF-8'
+    src_encoding = 'GBK' if src_encoding.upcase.strip =='GB2312'
     Iconv.iconv("UTF-8//IGNORE","#{src_encoding}//IGNORE",self).to_s  
   end  
 end 
